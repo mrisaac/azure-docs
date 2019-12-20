@@ -87,7 +87,9 @@ Use the steps in [this article](../active-directory/fundamentals/add-users-azure
     ![Azure VPN](./media/openvpn-create-azure-ad-tenant/azurevpn.png)
 
 8. Enable Azure AD authentication on the VPN gateway by running the following commands, being sure to modify the command to reflect your own environment:
-
+> [!NOTE]
+> The Point to Site Conciguration must be in OpenVPN® mode only. See the [Configure OpenVPN for Azure point-to-site VPN Gateway]vpn-gateway-howto-openvpn.md) article:
+>
     ```azurepowershell-interactive
     $gw = Get-AzVirtualNetworkGateway -Name <name of VPN gateway> -ResourceGroupName <Resource group>
     Set-AzVirtualNetworkGateway -VirtualNetworkGateway $gw -VpnClientRootCertificates @()
